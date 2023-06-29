@@ -1,10 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <IsPublishable>True</IsPublishable>
+    <Company>Ainia Solutions Oy</Company>
+    <Copyright>GNU Affero General Public License v3.0</Copyright>
+    <PackageProjectUrl>https://github.com/ainia-innovations-oy/RemedyDocumentBuilder</PackageProjectUrl>
+    <Description>Executable that produces PDF from html files.</Description>
+    <SignAssembly>True</SignAssembly>
   </PropertyGroup>
 
   <ItemGroup>
