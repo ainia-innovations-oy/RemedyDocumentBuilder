@@ -12,7 +12,6 @@
     <Description>Executable that produces PDF from html files.</Description>
     <SignAssembly>True</SignAssembly>
     <Title>Document builder</Title>
-    <Authors />
   </PropertyGroup>
 
   <ItemGroup>

@@ -18,8 +18,22 @@
  */
 
 using DocumentBuilderNet;
+using System.Diagnostics;
+using System.Reflection;
 
-string path = Environment.GetCommandLineArgs()[1];
-string outFile = Environment.GetCommandLineArgs()[2];
-
-FileGeneration.CreatePDFFIle(path, outFile);
+try
+{
+    string path = Environment.GetCommandLineArgs()[1];
+    string outFile = Environment.GetCommandLineArgs()[2];
+    PDF.CreatePDFFIle(path, outFile);
+}catch(Exception e)
+{
+    var versionInfo = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location);
+  
+    if (versionInfo.ProductName != null || versionInfo.ProductVersion != null)
+        Console.WriteLine(string.Format("{0} \n \n {1} {2}", e.Message, 
+            versionInfo.ProductName, 
+            versionInfo.ProductVersion));
+    else
+        Console.WriteLine(string.Format("{0}", e.Message));
+}
